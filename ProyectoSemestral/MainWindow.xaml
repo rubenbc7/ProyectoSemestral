@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid  Background="#424242" Margin="0,0,-26.4,-47">
 
-        <ListBox x:Name="lstNombre" HorizontalAlignment="Left" Height="282" Margin="10,37,0,0" VerticalAlignment="Top" Width="108"/>
+        <ListBox x:Name="lstNombre" HorizontalAlignment="Left" Height="282" Margin="10,37,0,0" VerticalAlignment="Top" Width="108" SelectionChanged="LstNombre_SelectionChanged"/>
         <ListBox x:Name="lstAno" HorizontalAlignment="Left" Height="282" Margin="123,37,0,0" VerticalAlignment="Top" Width="73"/>
         <Button x:Name="btnA1" Content="Ordenar A-Z" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
         <Button x:Name="btnA2" Content="Ordenar Z-A" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
@@ -21,5 +21,12 @@
         <Button Visibility="Hidden" x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="687,380,0,0" VerticalAlignment="Top" Width="97" Height="30" Click="BtnCancelar_Click"/>
         <Button Visibility="Hidden" x:Name="btnAgregar" Content="Agregar a la lista" HorizontalAlignment="Left" Margin="567,380,0,0" VerticalAlignment="Top" Width="104" Height="30" Click="BtnAgregar_Click"/>
 
+
+        <Image Visibility="Hidden" x:Name="PPEstrella1" Margin="310,293,455,123" Source="estrella.png" Stretch="Fill"/>
+        <Image Visibility="Hidden" x:Name="PPEstrella2" Margin="365,293,400,123" Source="estrella.png" Stretch="Fill"/>
+        <Image Visibility="Hidden" x:Name="PPEstrella3" Margin="420,293,345,123" Source="estrella.png" Stretch="Fill"/>
+        <Image Visibility="Hidden" x:Name="PPEstrella4" Margin="475,293,290,123" Source="estrella.png" Stretch="Fill"/>
+        <Image Visibility="Hidden" x:Name="PPEstrella5" Margin="530,293,235,123" Source="estrella.png" Stretch="Fill"/>
+        <Button Visibility="Hidden" x:Name="BtnEditarElemento" Content="Editar Elemento" HorizontalAlignment="Left" Margin="350,13,0,0" VerticalAlignment="Top" Width="109" Height="24"/>
     </Grid>
 </Window>

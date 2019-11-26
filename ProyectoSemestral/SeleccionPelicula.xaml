@@ -16,24 +16,14 @@
         <TextBox x:Name="PPDirector" HorizontalAlignment="Left" Height="23" Margin="77,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="436" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,117,0,0" TextWrapping="Wrap" Text="Sinopsis:" VerticalAlignment="Top" Foreground="White" FontSize="16" RenderTransformOrigin="-1.67,0.475"/>
         <TextBlock HorizontalAlignment="Left" Margin="187,44,0,0" TextWrapping="Wrap" Text="Género:" VerticalAlignment="Top" Foreground="White" FontSize="16" RenderTransformOrigin="0.206,0.567"/>
-        <ComboBox x:Name="PPGenero" HorizontalAlignment="Left" Margin="247,44,0,0" VerticalAlignment="Top" Width="150">
-            <ComboBoxItem>Acción</ComboBoxItem>
-            <ComboBoxItem>Ciencia Ficción</ComboBoxItem>
-            <ComboBoxItem>Comedia</ComboBoxItem>
-            <ComboBoxItem>Documental</ComboBoxItem>
-            <ComboBoxItem>Drama</ComboBoxItem>
-            <ComboBoxItem>Fantasía</ComboBoxItem>
-            <ComboBoxItem>Romance</ComboBoxItem>
-            <ComboBoxItem>Terror</ComboBoxItem>
-            <ComboBoxItem>Western</ComboBoxItem>
-        </ComboBox>
+       
         <TextBox x:Name="PPSinopsis" HorizontalAlignment="Left" Height="124" Margin="76,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="437" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,250,0,0" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
-        <RadioButton x:Name="PPR1"  Foreground="white" Content="1" HorizontalAlignment="Left" Margin="77,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR2"  Foreground="white" Content="2" HorizontalAlignment="Left" Margin="119,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR3"  Foreground="white" Content="3" HorizontalAlignment="Left" Margin="161,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR4"  Foreground="white" Content="4" HorizontalAlignment="Left" Margin="203,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton Visibility="Hidden" x:Name="PPR5"  Foreground="white" Content="5" HorizontalAlignment="Left" Margin="247,256,0,0" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="PPTemporadasPP" HorizontalAlignment="Left" Margin="406,44,0,0" TextWrapping="Wrap" Text="Temp.:" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="PPTemporadas" HorizontalAlignment="Left" Height="23" Margin="456,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" FontSize="16" RenderTransformOrigin="5.085,2.287"/>
+        <TextBox x:Name="PPGenero" HorizontalAlignment="Left" Height="23" Margin="247,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147" FontSize="16"/>
+
 
     </Grid>
 </UserControl>
