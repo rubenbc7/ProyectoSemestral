@@ -12,8 +12,8 @@
         <ListBox x:Name="lstAno" HorizontalAlignment="Left" Height="282" Margin="123,37,0,0" VerticalAlignment="Top" Width="73" SelectionChanged="LstAno_SelectionChanged"/>
         <Button x:Name="btnA1" Content="Ordenar A-Z" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnA1_Click"/>
         <Button x:Name="btnA2" Content="Ordenar Z-A" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnA2_Click"/>
-        <Button x:Name="btnAno1" Content="Ordenar Año 🡩" HorizontalAlignment="Left" Margin="115,340,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
-        <Button x:Name="btnAno2" Content="Ordenar Año 🡫" HorizontalAlignment="Left" Margin="115,380,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
+        <Button x:Name="btnAno1" Content="Ordenar Año 🡫" HorizontalAlignment="Left" Margin="115,340,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnAno1_Click"/>
+        <Button x:Name="btnAno2" Content="Ordenar Año 🡩" HorizontalAlignment="Left" Margin="115,380,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnAno2_Click"/>
         <Label Foreground="White"  Content="Nombre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.555"/>
         <Label   Foreground="White" Content="Año" HorizontalAlignment="Left" Margin="123,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.555"/>
         <Button Content="Agregar Elemento" HorizontalAlignment="Left" Margin="226,13,0,0" VerticalAlignment="Top" Width="109" Height="24" Click="Button_Click"/>

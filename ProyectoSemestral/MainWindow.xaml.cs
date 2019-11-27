@@ -83,7 +83,8 @@ namespace ProyectoSemestral
             btnAno2.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Hidden;
             btnCancelar.Visibility = Visibility.Hidden;
-            btnActualizar.Visibility = Visibility.Visible;
+            btnActualizar.Visibility = Visibility.Hidden;
+            txtRequerimientos.Visibility = Visibility.Hidden;
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
@@ -95,12 +96,12 @@ namespace ProyectoSemestral
             //Pelicula temp = new Pelicula("Sin Titulo");
             if (((ParametrosElemento)(grdParametros.Children[0])).PEPelicula.IsChecked == true)
             {
-                if (string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).temp) /*||
+                if (string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).temp) ||
            string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).AAtemp) ||
            string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeDirTemp) ||
            string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeSinoTemp) ||
            ((ParametrosElemento)(grdParametros.Children[0])).PeRatingTemp == 0 ||
-           string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeGeneTemp)*/
+           string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeGeneTemp)
             )
                 {
                     txtRequerimientos.Visibility = Visibility.Visible;
@@ -366,11 +367,29 @@ namespace ProyectoSemestral
                     if (string.Compare(pelicula[i], pelicula[i + 1]) > 0)
                     {
                         var temp = pelicula[i];
-                      
+                        var temp2 = ano[i];
+                        var temp3 = director[i];
+                        var temp4 = sinopsis[i];
+                        var temp5 = temporadas[i];
+                        var temp6 = genero[i];
+                        var temp7 = rating[i];
+
                         pelicula[i] = pelicula[i + 1];
-                     
+                        ano[i] = ano[i + 1];
+                        director[i] = director[i + 1];
+                        sinopsis[i] = sinopsis[i + 1];
+                        temporadas[i] = temporadas[i + 1];
+                        genero[i] = genero[i + 1];
+                        rating[i] = rating[i + 1];
+
                         pelicula[i + 1] = temp;
-                       
+                        ano[i + 1] = temp2;
+                        director[i + 1] = temp3;
+                        sinopsis[i + 1] = temp4;
+                        temporadas[i + 1] = temp5;
+                        genero[i + 1] = temp6;
+                        rating[i + 1] = temp7;
+
                         odri = true;
                     }
                 }
@@ -389,11 +408,109 @@ namespace ProyectoSemestral
                     if (string.Compare(pelicula[i], pelicula[i + 1]) < 0)
                     {
                         var temp = pelicula[i];
-                    
+                        var temp2 = ano[i];
+                        var temp3 = director[i];
+                        var temp4 = sinopsis[i];
+                        var temp5 = temporadas[i];
+                        var temp6 = genero[i];
+                        var temp7 = rating[i];
+
                         pelicula[i] = pelicula[i + 1];
-                       
+                        ano[i] = ano[i + 1];
+                        director[i] = director[i + 1];
+                        sinopsis[i] = sinopsis[i + 1];
+                        temporadas[i] = temporadas[i + 1];
+                        genero[i] = genero[i + 1];
+                        rating[i] = rating[i + 1];
+
                         pelicula[i + 1] = temp;
-                      
+                        ano[i + 1] = temp2;
+                        director[i + 1] = temp3;
+                        sinopsis[i + 1] = temp4;
+                        temporadas[i + 1] = temp5;
+                        genero[i + 1] = temp6;
+                        rating[i + 1] = temp7;
+
+                        odri = true;
+                    }
+                }
+            } while (odri == true);
+        }
+
+        private void BtnAno1_Click(object sender, RoutedEventArgs e)
+        {
+            bool odri;
+            do
+            {
+                odri = false;
+                for (int i = 0; i < (ano.Count - 1); i++)
+                {
+                    if (string.Compare(ano[i], ano[i + 1]) < 0)
+                    {
+                        var temp = ano[i];
+                        var temp2 = pelicula[i];
+                        var temp3 = director[i];
+                        var temp4 = sinopsis[i];
+                        var temp5 = temporadas[i];
+                        var temp6 = genero[i];
+                        var temp7 = rating[i];
+
+                        ano[i] = ano[i + 1];
+                        pelicula[i] = pelicula[i + 1];
+                        director[i] = director[i + 1];
+                        sinopsis[i] = sinopsis[i + 1];
+                        temporadas[i] = temporadas[i + 1];
+                        genero[i] = genero[i + 1];
+                        rating[i] = rating[i + 1];
+
+                        ano[i + 1] = temp;
+                        pelicula[i + 1] = temp2;
+                        director[i + 1] = temp3;
+                        sinopsis[i + 1] = temp4;
+                        temporadas[i + 1] = temp5;
+                        genero[i + 1] = temp6;
+                        rating[i + 1] = temp7;
+
+                        odri = true;
+                    }
+                }
+            } while (odri == true);
+        }
+
+        private void BtnAno2_Click(object sender, RoutedEventArgs e)
+        {
+            bool odri;
+            do
+            {
+                odri = false;
+                for (int i = 0; i < (ano.Count - 1); i++)
+                {
+                    if (string.Compare(ano[i], ano[i + 1]) > 0)
+                    {
+                        var temp = ano[i];
+                        var temp2 = pelicula[i];
+                        var temp3 = director[i];
+                        var temp4 = sinopsis[i];
+                        var temp5 = temporadas[i];
+                        var temp6 = genero[i];
+                        var temp7 = rating[i];
+
+                        ano[i] = ano[i + 1];
+                        pelicula[i] = pelicula[i + 1];
+                        director[i] = director[i + 1];
+                        sinopsis[i] = sinopsis[i + 1];
+                        temporadas[i] = temporadas[i + 1];
+                        genero[i] = genero[i + 1];
+                        rating[i] = rating[i + 1];
+
+                        ano[i + 1] = temp;
+                        pelicula[i + 1] = temp2;
+                        director[i + 1] = temp3;
+                        sinopsis[i + 1] = temp4;
+                        temporadas[i + 1] = temp5;
+                        genero[i + 1] = temp6;
+                        rating[i + 1] = temp7;
+
                         odri = true;
                     }
                 }
