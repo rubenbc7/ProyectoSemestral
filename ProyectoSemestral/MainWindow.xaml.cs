@@ -52,7 +52,7 @@ namespace ProyectoSemestral
             txtRequerimientos.Visibility = Visibility.Hidden;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnele_Click(object sender, RoutedEventArgs e)
         {
             grdParametros.Children.Clear();
             grdParametros.Children.Add(new ParametrosElemento());
@@ -63,6 +63,8 @@ namespace ProyectoSemestral
             btnAno2.Visibility = Visibility.Hidden;
             btnAgregar.Visibility = Visibility.Visible;
             btnCancelar.Visibility = Visibility.Visible;
+            btnele.Visibility = Visibility.Visible;
+            
 
             PPEstrella1.Visibility = Visibility.Hidden;
             PPEstrella2.Visibility = Visibility.Hidden;
@@ -139,6 +141,7 @@ namespace ProyectoSemestral
             PPEstrella4.Visibility = Visibility.Hidden; 
             PPEstrella5.Visibility = Visibility.Hidden;
             txtRequerimientos.Visibility = Visibility.Hidden;
+                    btnele.Visibility = Visibility.Visible;
                 }
 
                 return;
@@ -189,12 +192,12 @@ namespace ProyectoSemestral
                         PPEstrella4.Visibility = Visibility.Hidden;
                         PPEstrella5.Visibility = Visibility.Hidden;
                         txtRequerimientos.Visibility = Visibility.Hidden;
-                    }
+                    btnele.Visibility = Visibility.Visible;
 
-                    return;
                 }
 
-           
+                return;
+                }
         }
 
         private void LstNombre_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -236,6 +239,14 @@ namespace ProyectoSemestral
 
                 }
 
+                if (rating[lstNombre.SelectedIndex] <= 0)
+                {
+                    PPEstrella1.Visibility = Visibility.Hidden;
+                    PPEstrella2.Visibility = Visibility.Hidden;
+                    PPEstrella3.Visibility = Visibility.Hidden;
+                    PPEstrella4.Visibility = Visibility.Hidden;
+                    PPEstrella5.Visibility = Visibility.Hidden;
+                }
                 if (rating[lstNombre.SelectedIndex] == 1)
                 {
                     PPEstrella1.Visibility = Visibility.Visible;
@@ -268,7 +279,7 @@ namespace ProyectoSemestral
                     PPEstrella4.Visibility = Visibility.Visible;
                     PPEstrella5.Visibility = Visibility.Hidden;
                 }
-                if (rating[lstNombre.SelectedIndex] == 5)
+                if (rating[lstNombre.SelectedIndex] >= 5)
                 {
                     PPEstrella1.Visibility = Visibility.Visible;
                     PPEstrella2.Visibility = Visibility.Visible;
@@ -293,6 +304,12 @@ namespace ProyectoSemestral
             ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.IsEnabled = true;
             ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.IsEnabled = true;
 
+            btnA1.Visibility = Visibility.Hidden;
+            btnA2.Visibility = Visibility.Hidden;
+            btnAno1.Visibility = Visibility.Hidden;
+            btnAno2.Visibility = Visibility.Hidden;
+            btnele.Visibility = Visibility.Hidden;
+
             btnCancelar.Visibility = Visibility.Visible;
             btnActualizar.Visibility = Visibility.Visible;
             PPEstrella1.Visibility = Visibility.Hidden;
@@ -309,8 +326,7 @@ namespace ProyectoSemestral
             if (string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text) ||
            string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text) ||
            string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text) ||
-           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text) ||
-           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text)  ||
            string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text) ||
            string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Text))
             {
@@ -347,11 +363,18 @@ namespace ProyectoSemestral
                     pelicula.RemoveAt(lstNombre.SelectedIndex);
 
                 }
+                btnele.Visibility = Visibility.Visible;
+                BtnEditarElemento.Visibility = Visibility.Hidden;
                 grdParametros.Visibility = Visibility.Hidden;
                 btnAgregar.Visibility = Visibility.Hidden;
                 btnCancelar.Visibility = Visibility.Hidden;
                 btnActualizar.Visibility = Visibility.Hidden;
                 txtRequerimientos.Visibility = Visibility.Hidden;
+                btnA1.Visibility = Visibility.Visible;
+                btnA2.Visibility = Visibility.Visible;
+                btnAno1.Visibility = Visibility.Visible;
+                btnAno2.Visibility = Visibility.Visible;
+                btnele.Visibility = Visibility.Visible;
             }
 
         }

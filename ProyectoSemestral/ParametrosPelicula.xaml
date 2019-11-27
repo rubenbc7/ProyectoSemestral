@@ -29,11 +29,12 @@
         </ComboBox>
         <TextBox x:Name="PPSinopsis" HorizontalAlignment="Left" Height="124" Margin="76,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="437" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,250,0,0" TextWrapping="Wrap" Text="Rating:" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
-        <RadioButton x:Name="PPR1"  Foreground="white" Content="1" HorizontalAlignment="Left" Margin="77,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR2"  Foreground="white" Content="2" HorizontalAlignment="Left" Margin="119,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR3"  Foreground="white" Content="3" HorizontalAlignment="Left" Margin="161,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR4"  Foreground="white" Content="4" HorizontalAlignment="Left" Margin="203,256,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="PPR5"  Foreground="white" Content="5" HorizontalAlignment="Left" Margin="247,256,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="PPR1"  Foreground="white" Content="1" HorizontalAlignment="Left" Margin="112,255,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="PPR2"  Foreground="white" Content="2" HorizontalAlignment="Left" Margin="154,255,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="PPR3"  Foreground="white" Content="3" HorizontalAlignment="Left" Margin="196,255,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="PPR4"  Foreground="white" Content="4" HorizontalAlignment="Left" Margin="238,255,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="PPR5"  Foreground="white" Content="5" HorizontalAlignment="Left" Margin="282,255,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="PPR0"  Foreground="white" Content="0" HorizontalAlignment="Left" Margin="77,255,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

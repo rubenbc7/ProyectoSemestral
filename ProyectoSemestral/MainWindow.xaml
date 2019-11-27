@@ -16,7 +16,7 @@
         <Button x:Name="btnAno2" Content="Ordenar Año 🡩" HorizontalAlignment="Left" Margin="115,380,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnAno2_Click"/>
         <Label Foreground="White"  Content="Nombre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.555"/>
         <Label   Foreground="White" Content="Año" HorizontalAlignment="Left" Margin="123,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.555"/>
-        <Button Content="Agregar Elemento" HorizontalAlignment="Left" Margin="226,13,0,0" VerticalAlignment="Top" Width="109" Height="24" Click="Button_Click"/>
+        <Button x:Name="btnele" Content="Agregar Elemento" HorizontalAlignment="Left" Margin="226,13,0,0" VerticalAlignment="Top" Width="109" Height="24" Click="btnele_Click"/>
         <Grid Visibility="Visible" x:Name="grdParametros" HorizontalAlignment="Left" Height="398" Margin="226,42,0,0" VerticalAlignment="Top" Width="540"/>
         <Button Visibility="Visible" x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="687,380,0,0" VerticalAlignment="Top" Width="97" Height="30" Click="BtnCancelar_Click"/>
         <Button Visibility="Visible" x:Name="btnAgregar" Content="Agregar a la lista" HorizontalAlignment="Left" Margin="567,380,0,0" VerticalAlignment="Top" Width="104" Height="30" Click="BtnAgregar_Click"/>

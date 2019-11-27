@@ -78,9 +78,12 @@ namespace ProyectoSemestral
                     PGeneTemp = ((ParametrosPelicula)(grdElementos.Children[0])).PPGenero.SelectedItem.ToString();
                     PeGeneTemp = PGeneTemp.Remove(0, 38);
                 }
-          
 
 
+                if (((ParametrosPelicula)(grdElementos.Children[0])).PPR0.IsChecked == true)
+                {
+                    PeRatingTemp = 0;
+                }
                 if (((ParametrosPelicula)(grdElementos.Children[0])).PPR1.IsChecked == true)
                 {
                     PeRatingTemp = 1;
@@ -123,6 +126,10 @@ namespace ProyectoSemestral
                     SeGeneTemp = SGeneTemp.Remove(0, 38);
                 }
 
+                if (((ParametrosSerie)(grdElementos.Children[0])).PSR1.IsChecked == true)
+                {
+                    SeRatingTemp = 0;
+                }
                 if (((ParametrosSerie)(grdElementos.Children[0])).PSR1.IsChecked == true)
                 {
                     SeRatingTemp = 1;
