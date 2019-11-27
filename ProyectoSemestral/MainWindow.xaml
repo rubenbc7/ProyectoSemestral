@@ -10,8 +10,8 @@
 
         <ListBox x:Name="lstNombre" HorizontalAlignment="Left" Height="282" Margin="10,37,0,0" VerticalAlignment="Top" Width="108" SelectionChanged="LstNombre_SelectionChanged"/>
         <ListBox x:Name="lstAno" HorizontalAlignment="Left" Height="282" Margin="123,37,0,0" VerticalAlignment="Top" Width="73" SelectionChanged="LstAno_SelectionChanged"/>
-        <Button x:Name="btnA1" Content="Ordenar A-Z" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
-        <Button x:Name="btnA2" Content="Ordenar Z-A" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
+        <Button x:Name="btnA1" Content="Ordenar A-Z" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnA1_Click"/>
+        <Button x:Name="btnA2" Content="Ordenar Z-A" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="90" Height="30" Click="BtnA2_Click"/>
         <Button x:Name="btnAno1" Content="Ordenar Año 🡩" HorizontalAlignment="Left" Margin="115,340,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
         <Button x:Name="btnAno2" Content="Ordenar Año 🡫" HorizontalAlignment="Left" Margin="115,380,0,0" VerticalAlignment="Top" Width="90" Height="30"/>
         <Label Foreground="White"  Content="Nombre" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.555"/>
@@ -29,5 +29,6 @@
         <Image Visibility="Hidden" x:Name="PPEstrella5" Margin="530,293,235,123" Source="estrella.png" Stretch="Fill"/>
         <Button Visibility="Visible" x:Name="BtnEditarElemento" Content="Editar Elemento" HorizontalAlignment="Left" Margin="350,13,0,0" VerticalAlignment="Top" Width="109" Height="24" Click="BtnEditarElemento_Click"/>
         <Button Visibility="Visible" x:Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="549,380,0,0" VerticalAlignment="Top" Width="104" Height="30" Click="BtnActualizar_Click"/>
+        <TextBlock Foreground="Red" x:Name="txtRequerimientos" HorizontalAlignment="Left" Margin="285,380,0,0" TextWrapping="Wrap" Text="*Llena todos los campos" VerticalAlignment="Top" FontSize="22" Height="30" Width="245"/>
     </Grid>
 </Window>

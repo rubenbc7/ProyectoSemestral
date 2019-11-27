@@ -49,6 +49,7 @@ namespace ProyectoSemestral
             btnCancelar.Visibility = Visibility.Hidden;
             btnActualizar.Visibility = Visibility.Hidden;
             lstAno.IsEnabled = false;
+            txtRequerimientos.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -82,38 +83,38 @@ namespace ProyectoSemestral
             btnAno2.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Hidden;
             btnCancelar.Visibility = Visibility.Hidden;
+            btnActualizar.Visibility = Visibility.Visible;
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
+
       
             ((ParametrosElemento)(grdParametros.Children[0])).Prueba();
             //((ParametrosElemento)(grdParametros.Children[0])).RatingInt();
             //Pelicula temp = new Pelicula("Sin Titulo");
             if (((ParametrosElemento)(grdParametros.Children[0])).PEPelicula.IsChecked == true)
             {
-                titulomaybe = ((ParametrosElemento)(grdParametros.Children[0])).temp;
-                anomaybe = ((ParametrosElemento)(grdParametros.Children[0])).AAtemp;
-                directormaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeDirTemp;
-                sinopsismaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeSinoTemp;
-                temporadasmaybe = "";
-                ratingmaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeRatingTemp;
-                generomaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeGeneTemp;
-
-            }
-            if (((ParametrosElemento)(grdParametros.Children[0])).PESerie.IsChecked == true)
-            {
-                titulomaybe = ((ParametrosElemento)(grdParametros.Children[0])).serietempo;
-                anomaybe = ((ParametrosElemento)(grdParametros.Children[0])).AAserietempo;
-                directormaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeDirTemp;
-                sinopsismaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeSinoTemp;
-                temporadasmaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeTemporaTemp;
-                ratingmaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeRatingTemp;
-                generomaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeGeneTemp;
-
-            }
-
-            ano.Add(anomaybe);
+                if (string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).temp) /*||
+           string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).AAtemp) ||
+           string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeDirTemp) ||
+           string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeSinoTemp) ||
+           ((ParametrosElemento)(grdParametros.Children[0])).PeRatingTemp == 0 ||
+           string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).PeGeneTemp)*/
+            )
+                {
+                    txtRequerimientos.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    titulomaybe = ((ParametrosElemento)(grdParametros.Children[0])).temp;
+                    anomaybe = ((ParametrosElemento)(grdParametros.Children[0])).AAtemp;
+                    directormaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeDirTemp;
+                    sinopsismaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeSinoTemp;
+                    temporadasmaybe = "";
+                    ratingmaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeRatingTemp;
+                    generomaybe = ((ParametrosElemento)(grdParametros.Children[0])).PeGeneTemp;
+                     ano.Add(anomaybe);
             pelicula.Add(titulomaybe);
             director.Add(directormaybe);
             sinopsis.Add(sinopsismaybe);
@@ -136,6 +137,63 @@ namespace ProyectoSemestral
             PPEstrella3.Visibility = Visibility.Hidden;
             PPEstrella4.Visibility = Visibility.Hidden; 
             PPEstrella5.Visibility = Visibility.Hidden;
+            txtRequerimientos.Visibility = Visibility.Hidden;
+                }
+
+                return;
+            }
+            if (((ParametrosElemento)(grdParametros.Children[0])).PESerie.IsChecked == true)
+            {
+                    if (string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).serietempo) ||
+               string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).AAserietempo) ||
+               string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).SeDirTemp) ||
+               string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).SeSinoTemp) ||
+               ((ParametrosElemento)(grdParametros.Children[0])).SeRatingTemp == 0 ||
+               string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).SeGeneTemp) ||
+               string.IsNullOrEmpty(((ParametrosElemento)(grdParametros.Children[0])).SeTemporaTemp)
+                )
+                    {
+                        txtRequerimientos.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        titulomaybe = ((ParametrosElemento)(grdParametros.Children[0])).serietempo;
+                        anomaybe = ((ParametrosElemento)(grdParametros.Children[0])).AAserietempo;
+                        directormaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeDirTemp;
+                        sinopsismaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeSinoTemp;
+                        temporadasmaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeTemporaTemp;
+                        ratingmaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeRatingTemp;
+                        generomaybe = ((ParametrosElemento)(grdParametros.Children[0])).SeGeneTemp;
+                        ano.Add(anomaybe);
+                        pelicula.Add(titulomaybe);
+                        director.Add(directormaybe);
+                        sinopsis.Add(sinopsismaybe);
+                        temporadas.Add(temporadasmaybe);
+                        genero.Add(generomaybe);
+                        rating.Add(ratingmaybe);
+
+                        grdParametros.Children.Clear();
+                        grdParametros.Visibility = Visibility.Hidden;
+                        btnA1.Visibility = Visibility.Visible;
+                        btnA2.Visibility = Visibility.Visible;
+                        btnAno1.Visibility = Visibility.Visible;
+                        btnAno2.Visibility = Visibility.Visible;
+                        btnAgregar.Visibility = Visibility.Hidden;
+                        btnCancelar.Visibility = Visibility.Hidden;
+
+
+                        PPEstrella1.Visibility = Visibility.Hidden;
+                        PPEstrella2.Visibility = Visibility.Hidden;
+                        PPEstrella3.Visibility = Visibility.Hidden;
+                        PPEstrella4.Visibility = Visibility.Hidden;
+                        PPEstrella5.Visibility = Visibility.Hidden;
+                        txtRequerimientos.Visibility = Visibility.Hidden;
+                    }
+
+                    return;
+                }
+
+           
         }
 
         private void LstNombre_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -246,41 +304,100 @@ namespace ProyectoSemestral
 
         private void BtnActualizar_Click(object sender, RoutedEventArgs e)
         {
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Visibility = Visibility.Hidden;
-            titulomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text;
-            anomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text;
-            directormaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text;
-            sinopsismaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text;
-            temporadasmaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text;
-            generomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text;
-            ratingmaybe = Int32.Parse(((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Text);
-            pelicula.Add(titulomaybe);
-            ano.Add(anomaybe);
-            director.Add(directormaybe);
-            sinopsis.Add(sinopsismaybe);
-            temporadas.Add(temporadasmaybe);
-            genero.Add(generomaybe);
-            rating.Add(ratingmaybe);
 
-            grdParametros.Children.Clear();
-
-            if (lstNombre.SelectedIndex != -1)
+            if (string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text) ||
+           string.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Text))
             {
-                pelicula.RemoveAt(lstNombre.SelectedIndex);
-                if (lstAno.SelectedIndex != -1)
+                txtRequerimientos.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Visibility = Visibility.Hidden;
+                titulomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text;
+                anomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text;
+                directormaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text;
+                sinopsismaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text;
+                temporadasmaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text;
+                generomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text;
+                ratingmaybe = Int32.Parse(((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Text);
+                pelicula.Add(titulomaybe);
+                ano.Add(anomaybe);
+                director.Add(directormaybe);
+                sinopsis.Add(sinopsismaybe);
+                temporadas.Add(temporadasmaybe);
+                genero.Add(generomaybe);
+                rating.Add(ratingmaybe);
+
+                grdParametros.Children.Clear();
+
+                if (lstAno.SelectedIndex == -1)
                 {
                     int var2 = lstNombre.SelectedIndex;
                     ano.RemoveAt(var2);
                 }
+
+                if (lstNombre.SelectedIndex != -1)
+                {
+                    pelicula.RemoveAt(lstNombre.SelectedIndex);
+
+                }
+                grdParametros.Visibility = Visibility.Hidden;
+                btnAgregar.Visibility = Visibility.Hidden;
+                btnCancelar.Visibility = Visibility.Hidden;
+                btnActualizar.Visibility = Visibility.Hidden;
+                txtRequerimientos.Visibility = Visibility.Hidden;
             }
-           
 
-            grdParametros.Visibility = Visibility.Hidden;
-            btnAgregar.Visibility = Visibility.Hidden;
-            btnCancelar.Visibility = Visibility.Hidden;
-            btnActualizar.Visibility = Visibility.Hidden;
+        }
 
-     
+        private void BtnA1_Click(object sender, RoutedEventArgs e)
+        {
+            bool odri;
+            do
+            {
+                odri = false;
+                for (int i = 0; i < (pelicula.Count - 1); i++)
+                {
+                    if (string.Compare(pelicula[i], pelicula[i + 1]) > 0)
+                    {
+                        var temp = pelicula[i];
+                      
+                        pelicula[i] = pelicula[i + 1];
+                     
+                        pelicula[i + 1] = temp;
+                       
+                        odri = true;
+                    }
+                }
+            } while (odri == true);
+            
+        }
+
+        private void BtnA2_Click(object sender, RoutedEventArgs e)
+        {
+            bool odri;
+            do
+            {
+                odri = false;
+                for (int i = 0; i < (pelicula.Count - 1); i++)
+                {
+                    if (string.Compare(pelicula[i], pelicula[i + 1]) < 0)
+                    {
+                        var temp = pelicula[i];
+                    
+                        pelicula[i] = pelicula[i + 1];
+                       
+                        pelicula[i + 1] = temp;
+                      
+                        odri = true;
+                    }
+                }
+            } while (odri == true);
         }
     }
 }
