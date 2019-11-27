@@ -39,13 +39,16 @@ namespace ProyectoSemestral
         public int ratingmaybe { get; set; }
 
 
-    
-
         public MainWindow()
         {
             InitializeComponent();
             lstNombre.ItemsSource = pelicula;
             lstAno.ItemsSource = ano;
+            BtnEditarElemento.Visibility = Visibility.Hidden;
+            btnAgregar.Visibility = Visibility.Hidden;
+            btnCancelar.Visibility = Visibility.Hidden;
+            btnActualizar.Visibility = Visibility.Hidden;
+            lstAno.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,6 +69,7 @@ namespace ProyectoSemestral
             PPEstrella4.Visibility = Visibility.Hidden;
             PPEstrella5.Visibility = Visibility.Hidden;
 
+           
         }
 
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
@@ -82,6 +86,7 @@ namespace ProyectoSemestral
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
+      
             ((ParametrosElemento)(grdParametros.Children[0])).Prueba();
             //((ParametrosElemento)(grdParametros.Children[0])).RatingInt();
             //Pelicula temp = new Pelicula("Sin Titulo");
@@ -147,67 +152,135 @@ namespace ProyectoSemestral
             ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.IsEnabled = false;
             ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.IsEnabled = false;
 
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text = pelicula[lstNombre.SelectedIndex];
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text = ano[lstNombre.SelectedIndex];
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text = director[lstNombre.SelectedIndex];
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text = sinopsis[lstNombre.SelectedIndex];
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text = temporadas[lstNombre.SelectedIndex];
-            ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text = genero[lstNombre.SelectedIndex];
+            if (lstNombre.SelectedIndex != -1)
+            {
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text = pelicula[lstNombre.SelectedIndex];
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text = ano[lstNombre.SelectedIndex];
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text = director[lstNombre.SelectedIndex];
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text = sinopsis[lstNombre.SelectedIndex];
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text = temporadas[lstNombre.SelectedIndex];
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text = genero[lstNombre.SelectedIndex];
+                ((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Text = rating[lstNombre.SelectedIndex].ToString();
 
 
-            if (String.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text))
-            {
-                ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Visibility = Visibility.Hidden;
-                ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadasPP.Visibility = Visibility.Hidden;
 
-            }
-            else
-            {
-                ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Visibility = Visibility.Visible;
-                ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadasPP.Visibility = Visibility.Visible;
+                if (String.IsNullOrEmpty(((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text))
+                {
+                    ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Visibility = Visibility.Hidden;
+                    ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadasPP.Visibility = Visibility.Hidden;
 
-            }
+                }
+                else
+                {
+                    ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Visibility = Visibility.Visible;
+                    ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadasPP.Visibility = Visibility.Visible;
 
-            if(rating[lstNombre.SelectedIndex] == 1)
-            {
-              PPEstrella1.Visibility = Visibility.Visible;
-              PPEstrella2.Visibility = Visibility.Hidden;
-                PPEstrella3.Visibility = Visibility.Hidden;
-                PPEstrella4.Visibility = Visibility.Hidden;
-                PPEstrella5.Visibility = Visibility.Hidden;
+                }
+
+                if (rating[lstNombre.SelectedIndex] == 1)
+                {
+                    PPEstrella1.Visibility = Visibility.Visible;
+                    PPEstrella2.Visibility = Visibility.Hidden;
+                    PPEstrella3.Visibility = Visibility.Hidden;
+                    PPEstrella4.Visibility = Visibility.Hidden;
+                    PPEstrella5.Visibility = Visibility.Hidden;
+                }
+                if (rating[lstNombre.SelectedIndex] == 2)
+                {
+                    PPEstrella1.Visibility = Visibility.Visible;
+                    PPEstrella2.Visibility = Visibility.Visible;
+                    PPEstrella3.Visibility = Visibility.Hidden;
+                    PPEstrella4.Visibility = Visibility.Hidden;
+                    PPEstrella5.Visibility = Visibility.Hidden;
+                }
+                if (rating[lstNombre.SelectedIndex] == 3)
+                {
+                    PPEstrella1.Visibility = Visibility.Visible;
+                    PPEstrella2.Visibility = Visibility.Visible;
+                    PPEstrella3.Visibility = Visibility.Visible;
+                    PPEstrella4.Visibility = Visibility.Hidden;
+                    PPEstrella5.Visibility = Visibility.Hidden;
+                }
+                if (rating[lstNombre.SelectedIndex] == 4)
+                {
+                    PPEstrella1.Visibility = Visibility.Visible;
+                    PPEstrella2.Visibility = Visibility.Visible;
+                    PPEstrella3.Visibility = Visibility.Visible;
+                    PPEstrella4.Visibility = Visibility.Visible;
+                    PPEstrella5.Visibility = Visibility.Hidden;
+                }
+                if (rating[lstNombre.SelectedIndex] == 5)
+                {
+                    PPEstrella1.Visibility = Visibility.Visible;
+                    PPEstrella2.Visibility = Visibility.Visible;
+                    PPEstrella3.Visibility = Visibility.Visible;
+                    PPEstrella4.Visibility = Visibility.Visible;
+                    PPEstrella5.Visibility = Visibility.Visible;
+                }
             }
-            if (rating[lstNombre.SelectedIndex] == 2)
+        }
+
+        private void LstAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void BtnEditarElemento_Click(object sender, RoutedEventArgs e)
+        {
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.IsEnabled = true;
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPAno.IsEnabled = true;
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.IsEnabled = true;
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.IsEnabled = true;
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.IsEnabled = true;
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.IsEnabled = true;
+
+            btnCancelar.Visibility = Visibility.Visible;
+            btnActualizar.Visibility = Visibility.Visible;
+            PPEstrella1.Visibility = Visibility.Hidden;
+            PPEstrella2.Visibility = Visibility.Hidden;
+            PPEstrella3.Visibility = Visibility.Hidden;
+            PPEstrella4.Visibility = Visibility.Hidden;
+            PPEstrella5.Visibility = Visibility.Hidden;
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Visibility = Visibility.Visible;
+        }
+
+        private void BtnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            ((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Visibility = Visibility.Hidden;
+            titulomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPTitulo.Text;
+            anomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPAno.Text;
+            directormaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPDirector.Text;
+            sinopsismaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPSinopsis.Text;
+            temporadasmaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPTemporadas.Text;
+            generomaybe = ((SeleccionPelicula)(grdParametros.Children[0])).PPGenero.Text;
+            ratingmaybe = Int32.Parse(((SeleccionPelicula)(grdParametros.Children[0])).PPRating.Text);
+            pelicula.Add(titulomaybe);
+            ano.Add(anomaybe);
+            director.Add(directormaybe);
+            sinopsis.Add(sinopsismaybe);
+            temporadas.Add(temporadasmaybe);
+            genero.Add(generomaybe);
+            rating.Add(ratingmaybe);
+
+            grdParametros.Children.Clear();
+
+            if (lstNombre.SelectedIndex != -1)
             {
-                PPEstrella1.Visibility = Visibility.Visible;
-                PPEstrella2.Visibility = Visibility.Visible;
-                PPEstrella3.Visibility = Visibility.Hidden;
-                PPEstrella4.Visibility = Visibility.Hidden;
-                PPEstrella5.Visibility = Visibility.Hidden;
+                pelicula.RemoveAt(lstNombre.SelectedIndex);
+                if (lstAno.SelectedIndex != -1)
+                {
+                    int var2 = lstNombre.SelectedIndex;
+                    ano.RemoveAt(var2);
+                }
             }
-            if (rating[lstNombre.SelectedIndex] == 3)
-            {
-                PPEstrella1.Visibility = Visibility.Visible;
-                PPEstrella2.Visibility = Visibility.Visible;
-                PPEstrella3.Visibility = Visibility.Visible;
-                PPEstrella4.Visibility = Visibility.Hidden;
-                PPEstrella5.Visibility = Visibility.Hidden;
-            }
-            if (rating[lstNombre.SelectedIndex] == 4)
-            {
-                PPEstrella1.Visibility = Visibility.Visible;
-                PPEstrella2.Visibility = Visibility.Visible;
-                PPEstrella3.Visibility = Visibility.Visible;
-                PPEstrella4.Visibility = Visibility.Visible;
-                PPEstrella5.Visibility = Visibility.Hidden;
-            }
-            if (rating[lstNombre.SelectedIndex] == 5)
-            {
-                PPEstrella1.Visibility = Visibility.Visible;
-                PPEstrella2.Visibility = Visibility.Visible;
-                PPEstrella3.Visibility = Visibility.Visible;
-                PPEstrella4.Visibility = Visibility.Visible;
-                PPEstrella5.Visibility = Visibility.Visible;
-            }
+           
+
+            grdParametros.Visibility = Visibility.Hidden;
+            btnAgregar.Visibility = Visibility.Hidden;
+            btnCancelar.Visibility = Visibility.Hidden;
+            btnActualizar.Visibility = Visibility.Hidden;
+
+     
         }
     }
 }

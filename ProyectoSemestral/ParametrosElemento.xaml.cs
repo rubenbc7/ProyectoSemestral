@@ -112,12 +112,20 @@ namespace ProyectoSemestral
                 SeDirTemp =  ((ParametrosSerie)(grdElementos.Children[0])).PSDirector.Text;
                 SeSinoTemp = ((ParametrosSerie)(grdElementos.Children[0])).PSSinopsis.Text;
                 SeTemporaTemp = ((ParametrosSerie)(grdElementos.Children[0])).PSTemporadas.Text;
-                SGeneTemp = ((ParametrosSerie)(grdElementos.Children[0])).PSGenero.SelectedItem.ToString();
-                SeGeneTemp = SGeneTemp.Remove(0, 38);
+               
+                if (((ParametrosSerie)(grdElementos.Children[0])).PSGenero.SelectedIndex < 0)
+                {
+                    SeGeneTemp = "";
+                }
+                else
+                {
+                    SGeneTemp = ((ParametrosSerie)(grdElementos.Children[0])).PSGenero.SelectedItem.ToString();
+                    SeGeneTemp = SGeneTemp.Remove(0, 38);
+                }
 
                 if (((ParametrosSerie)(grdElementos.Children[0])).PSR1.IsChecked == true)
                 {
-                    PeRatingTemp = 1;
+                    SeRatingTemp = 1;
                 }
                 if (((ParametrosSerie)(grdElementos.Children[0])).PSR2.IsChecked == true)
                 {
